@@ -11,7 +11,7 @@
     <mat-form-field>
       <mat-label>Fecha</mat-label>
       <input matInput [matDatepicker]="picker">
-      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-hint>DD/MM/YYYY</mat-hint>
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
@@ -21,10 +21,21 @@
     <mat-form-field>
       <mat-label>Select me</mat-label>
       <mat-select>
-        <mat-option value="option">Option</mat-option>
+        <mat-option value="analista">Analista</mat-option>
+        <mat-option value="qa_tester">QA Tester</mat-option>
+        <mat-option value="full_stack">Full Stack</mat-option>
+        <mat-option value="d_front">Diseñador Front</mat-option>
       </mat-select>
     </mat-form-field>
 
+    <!-- Zona de Contraseña -->
+    <mat-divider></mat-divider>
+    <mat-form-field>
+      <mat-label>Contraseña:</mat-label>
+      <input type="password" matInput placeholder="" formControlName="ps" required>
+      <mat-label>Repetir Contraseña:</mat-label>
+      <input type="password" matInput placeholder="" formControlName="ps_r" required>
+    </mat-form-field>
   </div>
 
 </form>
