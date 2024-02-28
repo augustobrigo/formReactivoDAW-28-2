@@ -24,7 +24,6 @@ constructor(private fb:FormBuilder){}
   passwordMatchValidator(fr: FormGroup){
 
     const ps = fr.get('ps')!.value;
-    var comprobado=false;
     console.log(ps);
     console.log("PASSWORD 1");
 
@@ -33,9 +32,10 @@ constructor(private fb:FormBuilder){}
     console.log("PASSWORD 2");
 
     if (ps!=="") {
-      if (ps===ps_r) {
-        comprobado=true;
-        console.log("COMPROBADO: "+comprobado);
+      if (ps!==ps_r) {
+        fr.get('ps_r')?.setErrors({ mismatch: true });
+      }else{
+        fr.get('ps_r')?.setErrors(null);
       }
     }
   }

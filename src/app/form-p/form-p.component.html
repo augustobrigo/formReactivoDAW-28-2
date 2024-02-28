@@ -37,7 +37,8 @@
     <mat-form-field>
       <mat-label>Repetir Contraseña:</mat-label>
       <input type="password" matInput placeholder="" formControlName="ps_r" required>
-      <mat-error *ngIf='miform.hasError("comprobado")'>Las contraseñas no coinciden</mat-error>
+      <mat-error *ngIf='miform.get("ps_r")?.hasError("required")'>Contraseña Requerida</mat-error>
+      <mat-error *ngIf='miform.get("ps_r")?.hasError("mismatch")'>Las contraseñas no coinciden</mat-error>
     </mat-form-field>
     <mat-divider></mat-divider>
     <button mat-flat-button color="primary" [disabled]="miform.invalid">Enviar</button>
