@@ -11,6 +11,8 @@ import {MatFormFieldModule} from '@angular/material/form-field'
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {NativeDateModule} from '@angular/material/core';
 import {MAT_DATE_LOCALE} from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
+import { MatDividerModule } from "@angular/material/divider";
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import {MAT_DATE_LOCALE} from '@angular/material/core';
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
-    NativeDateModule
+    NativeDateModule,
+    MatSelectModule,
+    MatDividerModule
   ],
   providers: [{provide: MAT_DATE_LOCALE, useValue: 'es-ES'}],
   bootstrap: [AppComponent]

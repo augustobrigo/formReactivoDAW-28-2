@@ -1,15 +1,28 @@
 <form action="" [formGroup]="miform">
   <div class="example-container">
+    <!-- Zona de Email -->
     <mat-form-field>
-      <mat-label>Enter your email</mat-label>
-      <input matInput placeholder="pat@example.com" required>
+      <mat-label>Email:</mat-label>
+      <input matInput placeholder="pat@example.com" formControlName="email" required>
     </mat-form-field>
+    <mat-divider></mat-divider>
+
+    <!-- Zona de Fecha -->
     <mat-form-field>
-      <mat-label>Choose a date</mat-label>
+      <mat-label>Fecha</mat-label>
       <input matInput [matDatepicker]="picker">
       <mat-hint>MM/DD/YYYY</mat-hint>
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-divider></mat-divider>
+    <!-- Zona de Trabajo -->
+    <mat-form-field>
+      <mat-label>Select me</mat-label>
+      <mat-select>
+        <mat-option value="option">Option</mat-option>
+      </mat-select>
     </mat-form-field>
 
   </div>
