@@ -14,15 +14,21 @@ constructor(private fb:FormBuilder){}
       email:['',[Validators.required,Validators.email]],
       fecha:['',[Validators.required]],
       trabajo:['',[Validators.required]],
-      ps:['', [Validators.required, Validators.pattern('^[A-Z].{8}[0-9]$')
-    ]],
+      ps:['', [Validators.required, Validators.pattern('^[A-Z].{8}[0-9]$')]],
+      ps_r:['',[Validators.required]]
+    ,
 
     }, {
       validator: this.passwordMatchValidator
     })
   }
-  passwordMatchValidator(){
+  passwordMatchValidator(fr: FormGroup){
+    const ps = fr.get('ps')!.value;
+    const ps_r = fr.get('ps_r')!.value;
 
+    if (ps==ps_r) {
+     const comprobado=true
+    }
   }
 
 }
