@@ -14,9 +14,15 @@ constructor(private fb:FormBuilder){}
       email:['',[Validators.required,Validators.email]],
       fecha:['',[Validators.required]],
       trabajo:['',[Validators.required]],
-      ps:['', [Validators.required, Validators.pattern('^[A-Z].*[0-9]$'), Validators.minLength(10), Validators.maxLength(10)]],
+      ps:['', [Validators.required, Validators.pattern('^[A-Z].{8}[0-9]$')
+    ]],
+
+    }, {
+      validator: this.passwordMatchValidator
     })
   }
+  passwordMatchValidator(){
 
+  }
 
 }
