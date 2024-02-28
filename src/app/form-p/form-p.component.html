@@ -10,7 +10,7 @@
     <!-- Zona de Fecha -->
     <mat-form-field>
       <mat-label>Fecha</mat-label>
-      <input matInput [matDatepicker]="picker">
+      <input matInput [matDatepicker]="picker" formControlName="fecha">
       <mat-hint>DD/MM/YYYY</mat-hint>
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
@@ -19,8 +19,8 @@
     <mat-divider></mat-divider>
     <!-- Zona de Trabajo -->
     <mat-form-field>
-      <mat-label>Select me</mat-label>
-      <mat-select>
+      <mat-label>Elija</mat-label>
+      <mat-select formControlName="trabajo">
         <mat-option value="analista">Analista</mat-option>
         <mat-option value="qa_tester">QA Tester</mat-option>
         <mat-option value="full_stack">Full Stack</mat-option>
@@ -36,6 +36,8 @@
       <mat-label>Repetir Contraseña:</mat-label>
       <input type="password" matInput placeholder="" formControlName="ps_r" required>
     </mat-form-field>
+    <mat-divider></mat-divider>
+    <button mat-flat-button color="primary" [disabled]="miform.invalid">Enviar</button>
   </div>
 
 </form>
