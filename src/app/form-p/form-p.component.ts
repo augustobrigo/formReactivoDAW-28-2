@@ -16,18 +16,27 @@ constructor(private fb:FormBuilder){}
       trabajo:['',[Validators.required]],
       ps:['', [Validators.required, Validators.pattern('^[A-Z].{8}[0-9]$')]],
       ps_r:['',[Validators.required]]
-    ,
 
     }, {
-      validator: this.passwordMatchValidator
+      validators: this.passwordMatchValidator
     })
   }
   passwordMatchValidator(fr: FormGroup){
-    const ps = fr.get('ps')!.value;
-    const ps_r = fr.get('ps_r')!.value;
 
-    if (ps==ps_r) {
-     const comprobado=true
+    const ps = fr.get('ps')!.value;
+    var comprobado=false;
+    console.log(ps);
+    console.log("PASSWORD 1");
+
+    const ps_r = fr.get('ps_r')!.value;
+    console.log(ps_r);
+    console.log("PASSWORD 2");
+
+    if (ps!=="") {
+      if (ps===ps_r) {
+        comprobado=true;
+        console.log("COMPROBADO: "+comprobado);
+      }
     }
   }
 
